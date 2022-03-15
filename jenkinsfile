@@ -82,7 +82,7 @@ pipeline {
     agent { label 'demo' }
     when {environment name: 'BUILDME', value: 'yes'}
     steps{
-     withSonarQubeEnv('demosonarqube') {
+     withSonarQubeEnv('demosonarqube-idCred') {
 	  dir ("./samplejar") {
              sh 'mvn sonar:sonar'
 	  }
